@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>添加微信</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+window.onload = function () {
+    // 尝试直接打开微信加好友
+    window.location.href = "weixin://dl/add?username=X0768Z";
+    
+    // 如果没唤起微信，2秒后显示二维码
+    setTimeout(function () {
+        document.getElementById("qr").style.display = "block";
+    }, 2000);
+};
+</script>
+<style>
+body { 
+    text-align:center; 
+    font-family:Arial, sans-serif; 
+    padding:40px; 
+}
+#qr { 
+    display:none; 
+    margin-top:20px;
+}
+img { 
+    width:250px; 
+    height:250px; 
+}
+</style>
+</head>
+<body>
+<h2>正在为你打开微信…</h2>
+<p>如果没有自动跳转，请扫码二维码添加好友</p>
+<div id="qr">
+    <img src="https://u.wechat.com/EBeM4GXoDxb1zbaurnez45s?s=2" alt="微信二维码">
+</div>
+</body>
+</html>
